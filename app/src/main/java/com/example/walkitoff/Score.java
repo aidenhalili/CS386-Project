@@ -31,6 +31,7 @@ public class Score {
      */
     private int getLevelFromServer(){
 
+        return 0;
     }
 
     /**
@@ -40,6 +41,7 @@ public class Score {
      */
     private int getScoreFromServer(){
 
+        return 0;
     }
 
     /**
@@ -57,6 +59,7 @@ public class Score {
      */
     public int totalScore(){
 
+        return 0;
     }
 
     /**
@@ -77,5 +80,6 @@ public class Score {
      */
     public int userLevel(){
 
+        return 0;
     }
 }
