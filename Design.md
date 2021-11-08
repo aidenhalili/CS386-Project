@@ -66,10 +66,10 @@ The system would then cancel the prompt and return to previous screen
 
 ![Design Patterns](https://user-images.githubusercontent.com/71902318/140685454-ed98e290-f55b-433c-b75e-16fec9797fb7.jpg)
 
-[LocationData] https://github.com/aidenhalili/CS386-Project/blob/main/app/src/main/java/com/example/walkitoff/LocationData.java
-[Distance] https://github.com/aidenhalili/CS386-Project/blob/main/app/src/main/java/com/example/walkitoff/Distance.java
-[Score] https://github.com/aidenhalili/CS386-Project/blob/main/app/src/main/java/com/example/walkitoff/Score.java
-[Observer] https://github.com/aidenhalili/CS386-Project/blob/main/app/src/main/java/com/example/walkitoff/Observer.java
+[LocationData] https://github.com/aidenhalili/CS386-Project/blob/main/app/src/main/java/com/example/walkitoff/LocationData.java <br />
+[Distance] https://github.com/aidenhalili/CS386-Project/blob/main/app/src/main/java/com/example/walkitoff/Distance.java <br />
+[Score] https://github.com/aidenhalili/CS386-Project/blob/main/app/src/main/java/com/example/walkitoff/Score.java <br />
+[Observer] https://github.com/aidenhalili/CS386-Project/blob/main/app/src/main/java/com/example/walkitoff/Observer.java <br />
 
 Location and LocationManager are imported; no link available. 
 
