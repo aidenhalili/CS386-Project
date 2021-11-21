@@ -10,7 +10,7 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="28dp"
         android:text="HiScore:"
         app:layout_constraintStart_toStartOf="parent"
@@ -18,8 +18,8 @@
 
     <TextView
         android:id="@+id/statusText"
-        android:layout_width="377dp"
-        android:layout_height="299dp"
+        android:layout_width="307dp"
+        android:layout_height="145dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="56dp"
         android:text="TextView"
