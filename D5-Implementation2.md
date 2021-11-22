@@ -22,6 +22,23 @@ Print screen:
 
 ![image](https://user-images.githubusercontent.com/89943041/142799648-5fb0a4e6-5a06-4cf8-96e4-55b7e9bcbcf5.png)
 
+
+Requirement: As a user i want to be able to change my theme.
+
+Issue: https://github.com/aidenhalili/CS386-Project/issues/120
+
+Pull request: 
+
+Implemented by: Justin Stouffer
+
+Approved by: Justin Stouffer
+
+Print screen:
+
+![image](https://user-images.githubusercontent.com/89943041/142807498-0bfb38c1-7f42-428f-ba20-cfd3ec1a0bf8.png)
+
+
+
 #**3. Tests**
 ====================================================================================
 
