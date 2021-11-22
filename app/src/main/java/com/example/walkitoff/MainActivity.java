@@ -34,17 +34,13 @@ import com.google.android.material.switchmaterial.SwitchMaterial;
 
 public class MainActivity extends AppCompatActivity {
 
-    public static String chosenSound, chosenPresetLabel;
-
-    public static String uID,uName,uDistance,uScore,uLevel;
+    public static String uID,uName,uDistance,uScore,uLevel, chosenSound, chosenPresetLabel;
 
     static final int REQUEST_PERMISSION = 1;
 
-    int level = 0;
+    int hour, minute, level = 0;
 
     AlarmList alarmList = new AlarmList();
-
-    int hour, minute;
 
     private Theme settings;
     private SwitchMaterial themeSwitch;
@@ -55,38 +51,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        settings = (Theme) getApplication();
-        initWidgets();
-        loadSharedPreferences();
-        initSwitchListener();
+        initializeThemeSwitch();
 
-        // request permission for location services
-        ActivityCompat.requestPermissions( this,
-                new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_PERMISSION );
+        requestLocationPermission();
 
-        // initialize time picker
-        TimePicker timeSelected = findViewById( R.id.timepicker );
-
-        // create anonymous class for time change listener
-        timeSelected.setOnTimeChangedListener(new TimePicker.OnTimeChangedListener() {
-            @Override
-            public void onTimeChanged(TimePicker timePicker, int inHour, int inMinute) {
-
-                // save the chosen hour and minute
-                hour = inHour;
-                minute = inMinute;
-            }
-
-        });
-        // end anonymous class
+        initializeTimePicker();
 
         fillSoundMenu();
 
-        Spinner soundSpinner = findViewById( R.id.soundspinner );
-        Spinner presetSpinner = findViewById( R.id.presetspinner );
-
-        presetSpinner.setOnItemSelectedListener( new PresetSpinnerClass() );
-        soundSpinner.setOnItemSelectedListener( new SoundSpinnerClass() );
+        initializeSpinner();
 
         Button alarmButton = findViewById( R.id.alarmbutton );
         Button saveButton = findViewById( R.id.savebutton );
@@ -256,6 +229,52 @@ public class MainActivity extends AppCompatActivity {
         presetAdapter.setDropDownViewResource( android.R.layout.simple_spinner_dropdown_item );
 
         presetSpinner.setAdapter( presetAdapter );
+    }
+
+
+    private void fillSpinner( String array, int spinnerId ){
+
+    }
+
+    /**
+     * Note: add a class for every new spinner to inherit from spinner class
+     */
+    private void initializeSpinner(){
+        // declare spinners
+        Spinner soundSpinner = findViewById( R.id.soundspinner );
+        Spinner presetSpinner = findViewById( R.id.presetspinner );
+
+        // set listeners
+        presetSpinner.setOnItemSelectedListener( new PresetSpinnerClass() );
+        soundSpinner.setOnItemSelectedListener( new SoundSpinnerClass() );
+    }
+
+    private void initializeThemeSwitch(){
+
+        settings = (Theme) getApplication();
+        initWidgets();
+        loadSharedPreferences();
+        initSwitchListener();
+    }
+
+    private void initializeTimePicker(){
+
+        TimePicker timePicker = findViewById( R.id.timepicker );
+
+        timePicker.setOnTimeChangedListener(new TimePicker.OnTimeChangedListener() {
+            @Override
+            public void onTimeChanged(TimePicker timePicker, int inHour, int inMinute) {
+
+                hour = inHour;
+                minute = inMinute;
+            }
+        });
+    }
+
+    private void requestLocationPermission(){
+
+        ActivityCompat.requestPermissions( this,
+                new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_PERMISSION );
     }
 
     //This is our login activity being created.
