@@ -33,6 +33,8 @@ import android.widget.TimePicker;
 
 import com.google.android.material.switchmaterial.SwitchMaterial;
 
+import java.util.Collections;
+
 public class MainActivity extends AppCompatActivity {
 
     public static String uID,uName,uDistance,uScore,uLevel, chosenSound, chosenPresetLabel;
@@ -64,8 +66,8 @@ public class MainActivity extends AppCompatActivity {
 
         Button alarmButton = findViewById( R.id.alarmbutton );
         Button saveButton = findViewById( R.id.savebutton );
-        Button loginButton = findViewById( R.id.loginbutton );
 
+        Button loginButton = findViewById( R.id.loginbutton );
         loginButton.setOnClickListener( new LoginButtonPress( this ) );
 
         // called by alarm button
@@ -161,31 +163,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    class SoundSpinnerClass implements AdapterView.OnItemSelectedListener{
-
-        @Override
-        public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-            chosenSound = adapterView.getItemAtPosition( i ).toString();
-        }
-
-        @Override
-        public void onNothingSelected(AdapterView<?> adapterView) {
-            chosenSound = SoundName.DEFAULT_SOUND;
-        }
-    }
-
-    class PresetSpinnerClass implements AdapterView.OnItemSelectedListener{
-        @Override
-        public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-            chosenPresetLabel = adapterView.getItemAtPosition( i ).toString();
-        }
-
-        @Override
-        public void onNothingSelected(AdapterView<?> adapterView) {
-
-        }
-    }
-
 
     /**
      * fills the drop down spinner menu with unlocked sounds
@@ -194,23 +171,13 @@ public class MainActivity extends AppCompatActivity {
 
         String[] soundArray = SoundFacade.getSoundArray( level );
 
-        Spinner soundSpinner = findViewById( R.id.soundspinner );
-
-        ArrayAdapter<String> soundAdapter =
-                new ArrayAdapter<String>( this,
-                        android.R.layout.simple_list_item_1, soundArray );
-
-        soundAdapter.setDropDownViewResource( android.R.layout.simple_spinner_dropdown_item );
-
-        soundSpinner.setAdapter( soundAdapter );
+        fillSpinner( soundArray, R.id.soundspinner );
     }
 
     /**
      * fills second dropdown menu with alarm presets
      */
     private void fillPresetMenu(){
-
-        Spinner presetSpinner = findViewById( R.id.presetspinner );
 
         String[] alarmLabelArray = new String[ alarmList.size ];
 
@@ -221,16 +188,21 @@ public class MainActivity extends AppCompatActivity {
             alarmLabelArray[ index ] = alarmList.alarmArray[ index ].getAlarmLabel();
         }
 
-        ArrayAdapter<String> presetAdapter =new ArrayAdapter<String>(
-                this, android.R.layout.simple_list_item_1, alarmLabelArray );
-
-        presetAdapter.setDropDownViewResource( android.R.layout.simple_spinner_dropdown_item );
-
-        presetSpinner.setAdapter( presetAdapter );
+        fillSpinner( alarmLabelArray, R.id.presetspinner );
     }
 
 
-    private void fillSpinner( String array, int spinnerId ){
+    private void fillSpinner( String[] array, int spinnerId ){
+
+        Spinner spinner = findViewById( spinnerId );
+
+        ArrayAdapter<String> adapter =
+                new ArrayAdapter<String>( this, android.R.layout.simple_list_item_1, array );
+
+        adapter.setDropDownViewResource( android.R.layout.simple_spinner_dropdown_item );
+
+        spinner.setAdapter( adapter );
+
 
     }
 
@@ -243,8 +215,8 @@ public class MainActivity extends AppCompatActivity {
         Spinner presetSpinner = findViewById( R.id.presetspinner );
 
         // set listeners
-        presetSpinner.setOnItemSelectedListener( new PresetSpinnerClass() );
-        soundSpinner.setOnItemSelectedListener( new SoundSpinnerClass() );
+        presetSpinner.setOnItemSelectedListener( new PresetSpinner() );
+        soundSpinner.setOnItemSelectedListener( new SoundSpinner() );
     }
 
     private void initializeThemeSwitch(){
