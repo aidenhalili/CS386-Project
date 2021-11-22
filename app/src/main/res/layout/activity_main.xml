@@ -20,26 +20,19 @@
         android:id="@+id/alarmbutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="664dp"
-        android:layout_marginEnd="12dp"
-        android:layout_marginBottom="19dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="127dp"
         android:text="Set Alarm"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/loginbutton"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/loginbutton"
-        android:layout_width="141dp"
+        android:layout_width="0dp"
         android:layout_height="38dp"
-        android:layout_marginStart="138dp"
-        android:layout_marginTop="677dp"
-        android:layout_marginEnd="132dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginTop="102dp"
         android:text="@string/log_in"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/savebutton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -65,13 +58,11 @@
         android:id="@+id/savebutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="667dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginStart="11dp"
         android:text="Save Alarm"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/loginbutton"
+        app:layout_constraintBottom_toBottomOf="@+id/alarmbutton"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/alarmbutton" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
