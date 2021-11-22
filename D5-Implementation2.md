@@ -51,7 +51,15 @@ Approved by: Nickolas Maxwell
 Print screen: ![image](https://user-images.githubusercontent.com/89943041/142810507-cc3b3313-4153-4179-90f0-1fe6e617eb47.png)
 
 
+Requirement: As a user I want to be able to save my alarm
 
+Issue:
+
+Implemented by: Aiden Halili
+
+Approved by: Aiden Halili
+
+Print screen: ![image](https://github.com/aidenhalili/CS386-Project/blob/main/preset%20screenshot.jpg)
 
 
 
