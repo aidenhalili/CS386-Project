@@ -18,7 +18,7 @@ public class Distance {
     /*
     user distance goal in feet
      */
-    private static final int userDistanceGoal;
+    private static int userDistanceGoal;
 
     /**
      * default constructor
@@ -78,7 +78,7 @@ public class Distance {
         
         Scanner reader = new Scanner(System.in);
 
-        System.out.println(“Enter a goal distance to travel for the alarm: “);
+        //System.out.println('Enter a goal distance to travel for the alarm: ');
         
         userDistanceGoal = reader.nextInt();
     }
