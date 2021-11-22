@@ -48,6 +48,9 @@ Print screen:
 Demonstration of a user logging into Database, viewing scores, and updating new values.
 https://youtu.be/WPmxKIaCtG0
 
+Demonstration of a user interacting with the alarm(setting, movign to turn off)
+https://www.youtube.com/watch?v=QrXdFJhgnxM
+
 #**5. Code Quality**
 ====================================================================================
 1. Use good naming conventions - We try to name variables and methods in a concise manner that's short but also gives 
