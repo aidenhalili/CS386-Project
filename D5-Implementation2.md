@@ -8,6 +8,19 @@ Trello: https://trello.com/cs386walkitoff/members?utm_source=eval-email&utm_medi
 
 #**2. Implemented Requirements**
 ====================================================================================
+Requirement: As a user i want to be able to upload my data to be stored.
+
+Issue: https://github.com/aidenhalili/CS386-Project/issues/114
+
+Pull request: https://github.com/aidenhalili/CS386-Project/pull/100
+
+Implemented by: Nickolas Maxwell
+
+Approved by: Nickolas Maxwell
+
+Print screen:
+
+![image](https://user-images.githubusercontent.com/89943041/142799648-5fb0a4e6-5a06-4cf8-96e4-55b7e9bcbcf5.png)
 
 #**3. Tests**
 ====================================================================================
