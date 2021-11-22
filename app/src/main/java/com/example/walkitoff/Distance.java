@@ -18,7 +18,8 @@ public class Distance {
     /*
     user distance goal in feet
      */
-    private static final int userDistanceGoal;
+    //private static final int userDistanceGoal;
+    private static final int DEFAULT_GOAL = 30;
 
     /**
      * default constructor
@@ -26,7 +27,7 @@ public class Distance {
      */
     public Distance( Context context ) {
 
-        this( context, userDistanceGoal );
+        this( context, DEFAULT_GOAL );
     }
 
     /**
@@ -78,9 +79,9 @@ public class Distance {
         
         Scanner reader = new Scanner(System.in);
 
-        System.out.println(“Enter a goal distance to travel for the alarm: “);
+        //System.out.println(“Enter a goal distance to travel for the alarm: “);
         
-        userDistanceGoal = reader.nextInt();
+        //userDistanceGoal = reader.nextInt();
     }
 
 
