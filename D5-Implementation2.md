@@ -38,6 +38,21 @@ Print screen:
 ![image](https://user-images.githubusercontent.com/89943041/142807498-0bfb38c1-7f42-428f-ba20-cfd3ec1a0bf8.png)
 
 
+Requirement: As a user i want to be able to see my statistics, and how they compare to other users.
+
+Issue: https://github.com/aidenhalili/CS386-Project/issues/128
+
+Pull request: https://github.com/aidenhalili/CS386-Project/pull/98
+
+Implemented by: Nickolas Maxwell
+
+Approved by: Nickolas Maxwell
+
+Print screen: ![image](https://user-images.githubusercontent.com/89943041/142810507-cc3b3313-4153-4179-90f0-1fe6e617eb47.png)
+
+
+
+
 
 
 #**3. Tests**
