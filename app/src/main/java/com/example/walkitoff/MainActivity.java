@@ -34,7 +34,7 @@ import com.google.android.material.switchmaterial.SwitchMaterial;
 
 public class MainActivity extends AppCompatActivity {
 
-    String chosenSound, chosenPresetLabel;
+    public static String chosenSound, chosenPresetLabel;
 
     public static String uID,uName,uDistance,uScore,uLevel;
 
@@ -103,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
                             MainActivity.this, SoundFacade.getSound( chosenSound ) );
 
                     AlarmPreset preset =
-                            new AlarmPreset( MainActivity.this, hour, minute, sound );
+                            new AlarmPreset( MainActivity.this, hour, minute, chosenSound );
 
                     alarmList.addPreset( preset );
 
@@ -129,7 +129,7 @@ public class MainActivity extends AppCompatActivity {
                         MediaPlayer.create( MainActivity.this, SoundFacade.getSound( chosenSound ) );
 
                 AlarmPreset preset =
-                        new AlarmPreset( MainActivity.this, hour, minute, sound );
+                        new AlarmPreset( MainActivity.this, hour, minute, chosenSound );
 
                 alarmList.addPreset( preset );
 
