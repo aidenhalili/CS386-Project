@@ -49,7 +49,7 @@ Demonstration of a user logging into Database, viewing scores, and updating new 
 https://youtu.be/WPmxKIaCtG0
 
 Demonstration of a user interacting with the alarm(setting, moving to turn off)
-https://www.youtube.com/watch?v=QrXdFJhgnxM
+https://youtu.be/SsJ2g4RrLrg
 
 #**5. Code Quality**
 ====================================================================================
