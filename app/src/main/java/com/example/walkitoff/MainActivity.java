@@ -20,6 +20,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -63,6 +64,9 @@ public class MainActivity extends AppCompatActivity {
 
         Button alarmButton = findViewById( R.id.alarmbutton );
         Button saveButton = findViewById( R.id.savebutton );
+        Button loginButton = findViewById( R.id.loginbutton );
+
+        loginButton.setOnClickListener( new LoginButtonPress( this ) );
 
         // called by alarm button
         alarmButton.setOnClickListener( new View.OnClickListener() {
@@ -71,9 +75,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 if( chosenPresetLabel == null ){
-
-                    MediaPlayer sound = MediaPlayer.create(
-                            MainActivity.this, SoundFacade.getSound( chosenSound ) );
 
                     AlarmPreset preset =
                             new AlarmPreset( MainActivity.this, hour, minute, chosenSound );
@@ -97,9 +98,6 @@ public class MainActivity extends AppCompatActivity {
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                MediaPlayer sound =
-                        MediaPlayer.create( MainActivity.this, SoundFacade.getSound( chosenSound ) );
 
                 AlarmPreset preset =
                         new AlarmPreset( MainActivity.this, hour, minute, chosenSound );
@@ -275,13 +273,6 @@ public class MainActivity extends AppCompatActivity {
 
         ActivityCompat.requestPermissions( this,
                 new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_PERMISSION );
-    }
-
-    //This is our login activity being created.
-    public void connectDB(View view){
-
-        Intent intent = new Intent(this, ConnectDB.class);
-        startActivity(intent);
     }
 
 }
