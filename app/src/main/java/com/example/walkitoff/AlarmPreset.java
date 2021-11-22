@@ -23,7 +23,8 @@ public class AlarmPreset {
 
         this.context = context;
 
-        alarmLabel = Time.formatAlarmLabel( hour, minute );
+        alarmLabel =
+                Time.formatAlarmLabel( hour, minute ) + " - (" + MainActivity.chosenSound + ")";
 
     }
 
