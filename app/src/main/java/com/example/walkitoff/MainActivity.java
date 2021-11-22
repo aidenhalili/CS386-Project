@@ -2,8 +2,6 @@ package com.example.walkitoff;
 /* TODO
 - uncomment score Methods
 - uncomment score variables
-- Make connect Activity
-- Connect to DB
 - Load Values from DB
 - Constructor
 - Get methods
@@ -43,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
 
     int hour, minute, level = 0;
 
-    AlarmList alarmList = new AlarmList();
+    public AlarmList alarmList = new AlarmList();
 
     private Theme settings;
     private SwitchMaterial themeSwitch;
