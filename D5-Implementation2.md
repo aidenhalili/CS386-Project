@@ -8,20 +8,6 @@ Trello: https://trello.com/cs386walkitoff/members?utm_source=eval-email&utm_medi
 
 #**2. Implemented Requirements**
 ====================================================================================
-Requirement: As a user i want to be able to upload my data to be stored.
-
-Issue: https://github.com/aidenhalili/CS386-Project/issues/114
-
-Pull request: https://github.com/aidenhalili/CS386-Project/pull/100
-
-Implemented by: Nickolas Maxwell
-
-Approved by: Nickolas Maxwell
-
-Print screen:
-
-![image](https://user-images.githubusercontent.com/89943041/142799648-5fb0a4e6-5a06-4cf8-96e4-55b7e9bcbcf5.png)
-
 
 #**3. Tests**
 ====================================================================================
@@ -31,17 +17,21 @@ Print screen:
 Demonstration of a user logging into Database, viewing scores, and updating new values.
 https://youtu.be/WPmxKIaCtG0
 
-Demonstration of user setting and deactivating alarm. General App usage.
-https://www.youtube.com/watch?v=QrXdFJhgnxM
-
 #**5. Code Quality**
 ====================================================================================
-1. Use good naming conventions 
-2. Clean formatting 
-3. Code for Readability 
-4. Implement comments on things that may require knowledge
-5. Communicate to the others if you are modifying a class
-6. Leave a to do list in the main class
+1. Use good naming conventions - We try to name variables and methods in a concise manner that's short but also gives 
+   a clear indication to what the purpose is.  
+2. Clean formatting - All code is formatted to have aligned blocks and brackets so that new readers can tell how the code
+   is structured. 
+3. Code for Readability - The code is read by more than one member of the team so that readability is ensured. Complicated
+   code can be difficult to read, and makes it difficult for developers to work with. 
+4. Implement comments on things that may require knowledge - We try to limit the length of comments unless something must 
+   be explained in plain English. In general the code should be readable to the average reader without needing too much commentary. 
+5. Communicate to the others if you are modifying a class - Communication is key in the group, and this is because it is easy for
+   group members to independently work on the same task, without talking with one another. We try to assign roles during every meeting
+   so that each members understands his role, and there's no overlap in work. 
+6. Leave a to do list in the main class - This is so that anyone working on development can see what needs to be done, or what 
+   has already been done. 
 
 
 #**6. Lessons Learned**
