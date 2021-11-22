@@ -48,7 +48,7 @@ Print screen:
 Demonstration of a user logging into Database, viewing scores, and updating new values.
 https://youtu.be/WPmxKIaCtG0
 
-Demonstration of a user interacting with the alarm(setting, movign to turn off)
+Demonstration of a user interacting with the alarm(setting, moving to turn off)
 https://www.youtube.com/watch?v=QrXdFJhgnxM
 
 #**5. Code Quality**
