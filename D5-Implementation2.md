@@ -53,13 +53,15 @@ Print screen: ![image](https://user-images.githubusercontent.com/89943041/142810
 
 Requirement: As a user I want to be able to save my alarm
 
-Issue:
+Issue: https://github.com/aidenhalili/CS386-Project/issues/132
+
+Pull request: https://github.com/aidenhalili/CS386-Project/pull/96
 
 Implemented by: Aiden Halili
 
 Approved by: Aiden Halili
 
-Print screen: ![image](https://github.com/aidenhalili/CS386-Project/blob/main/preset%20screenshot.jpg)
+Print screen: ![image](https://github.com/aidenhalili/CS386-Project/blob/main/preset%20screenshot%20low%20res.jpg)
 
 
 
