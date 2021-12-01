@@ -39,11 +39,14 @@ those who wish to live a more avtive lifestyle.
 
 =====
 
-**User 2:**
+**User 2:** Nicholas Boticelli
 
-**Interviewer:**
+**Interviewer:** Aiden Halili
 
 **Script:**
+How would you compare this app to others like it?
+What would you change about the app?
+On a scale of 1 to 10, how likely would you continue using the app?
 
 **Results:**
 
