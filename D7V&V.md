@@ -13,7 +13,7 @@ WalkItOff is a lifestyle app that allows individuals who struggle with mornings,
 
 **2.1.1** we used JUnit4 for our tests.
 
-**2.1.2* Link: https://github.com/aidenhalili/CS386-Project/tree/main/app/src/test/java/com/example/walkitoff
+**2.1.2** Link: https://github.com/aidenhalili/CS386-Project/tree/main/app/src/test/java/com/example/walkitoff
 
 **2.1.3** For the alarm feature, we implemented a test to make sure that it would go off at the right time. The input is always 0-2 minutes ahead of current time.
 Link: https://github.com/aidenhalili/CS386-Project/blob/main/app/src/test/java/com/example/walkitoff/AlarmTest.java
