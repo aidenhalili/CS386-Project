@@ -24,7 +24,7 @@ WalkItOff is a lifestyle app that allows individuals who struggle with mornings,
 
 **Script:**
 User set alarm, and moved set distance to deactivate alarm.
-user uploaded results to DB via DBConnect
+User uploaded results to DB via DBConnect
 How would you describe the UI of the app? Simple, But easy to use.
 How does our app compare to the one you currently use? Its very different.
 On a scale of 1 to 10, how likely are you to continue using our app? 2
@@ -35,7 +35,7 @@ capabilities.
 
 **Reflections:**
 It seems this app is highly niche, and should be targeted towards 
-those who wish to live a more avtive lifestyle.
+those who wish to live a more active lifestyle.
 
 =====
 
@@ -68,15 +68,26 @@ ever have the same problem again.
 
 =====
 
-**User 3:**
+**User 3:** Phillip Krigbaum 
 
-**Interviewer:**
+**Interviewer:** Justin Stouffer 
 
-**Script:**
+**Script:** Question 1: How would you describe the layout of the app?
+Answer: I think the layout is overall clean, and easy to navigate and see. The only dislike I really have is that the login and set alarm buttons are not centered. 
 
-**Results:**
+Question 2: Do you like the ability to change the theme/is this something you would use?
+Answer: Yes, I think that is a nice feature and while I do like the light theme better, I think having the option is still very convenient. More themes would also be nice.
 
-**Reflections:**
+Question 3: How likely would you be to use this with the current layout and functionality?
+Answer: I would rate this as an 8.5 or 9/10 based on how the app is right now. 
+
+Question 4: What do you think of the highscore functionality? 
+Answer: I think it is pretty rough right now, but I really like the idea. I think it would be a good idea to have the login saved, so that you don't have to login each time, and also it would be nice to have a separate highscore tab. It would be a good idea to have more of a scoreboard type style, with different categories such as furthest distance, fastest time, etc. Achievements would also be a cool feature. 
+
+
+**Results:** Overall, the user liked the concept of the idea and would consider using it. They do think that the current build of the app is a little rough, such as the layout and high score page but they are satisfied with the functionality of the app. 
+
+**Reflections:** The apps base functionality proves to be useful to people, but fixing the app layout and design would attract many more users. It is also proven to be geared towards a niche gorup of users who need something more useful than their currrent alarm, and would like more of a challenge. 
 
 
 
