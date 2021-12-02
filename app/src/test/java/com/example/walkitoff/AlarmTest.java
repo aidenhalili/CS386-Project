@@ -15,19 +15,10 @@ public class AlarmTest {
         Date time = new Date();
         SimpleDateFormat formatTime = new SimpleDateFormat("HHmm");
 
-        String currentTime;
-
-        String[] inputArray = new String[3];
-        String[] outputArray = new String[3];
-
-        int arraySize = 0;
         int offSet = 0;
 
-        String input = initInput(offSet);
+        String currentTime, input = initInput(offSet);
 
-        while( offSet < 3 ){
-
-            inputArray[arraySize] = input;
 
             currentTime = formatTime.format( time );
 
@@ -37,16 +28,48 @@ public class AlarmTest {
 
                 currentTime = formatTime.format( time );
             }
+    }
 
-            offSet++;
+    @Test
+    public void setAlarm2() throws Exception {
 
-            outputArray[arraySize] = currentTime;
+        Date time = new Date();
+        SimpleDateFormat formatTime = new SimpleDateFormat("HHmm");
 
-            arraySize++;
+        int offSet = 1;
 
+        String currentTime, input = initInput(offSet);
+
+
+        currentTime = formatTime.format( time );
+
+        while( !input.equals( currentTime ) ){
+
+            time = new Date();
+
+            currentTime = formatTime.format( time );
         }
+    }
 
-        assertArrayEquals(inputArray, outputArray);
+    @Test
+    public void setAlarm3() throws Exception {
+
+        Date time = new Date();
+        SimpleDateFormat formatTime = new SimpleDateFormat("HHmm");
+
+        int offSet = 2;
+
+        String currentTime, input = initInput(offSet);
+
+
+        currentTime = formatTime.format( time );
+
+        while( !input.equals( currentTime ) ){
+
+            time = new Date();
+
+            currentTime = formatTime.format( time );
+        }
     }
 
     private String initInput(int offSet){
