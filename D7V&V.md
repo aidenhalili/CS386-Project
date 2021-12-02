@@ -39,15 +39,32 @@ those who wish to live a more avtive lifestyle.
 
 =====
 
-**User 2:**
+**User 2:** Nicholas Boticelli
 
-**Interviewer:**
+**Interviewer:** Aiden Halili
 
 **Script:**
+How would you compare this app to others like it?
+I usually go back to sleep with these kind of apps, but I probably wouldn't [go back to sleep]
+with the walking aspect. Unlocking new sounds also makes it a bit more fun.
+
+What would you change about the app?
+I mean, the log in page is a bit confusing, and I'd also like to see how much farther left I have to go.
+Also I get it's incomplete, but wouldn't closing the app disable the alarm?
+
+On a scale of 1 to 10, how likely would you continue using the app?
+7
 
 **Results:**
+The user believed that the concept behind the app would help him get up earlier. It's something he
+would use if he struggled to get up early, but would go back to a normal alarm clock app once he feels
+satisfied with his sleep schedule.
 
 **Reflections:**
+This app adequately addresses the problem of struggling to wake up at a desired time, although interest
+in this app seems to depend on if a user struggles with the problem at a given moment. As it currently stands,
+I would think that users would stop using the app as soon as their problem is solved, and go back to it should they
+ever have the same problem again.
 
 =====
 
