@@ -92,18 +92,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        saveButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                AlarmPreset preset =
-                        new AlarmPreset( MainActivity.this, hour, minute, chosenSound );
-
-                alarmList.addPreset( preset );
-
-                PresetSpinner.fillPresetSpinner( MainActivity.this );
-            }
-        });
+        saveButton.setOnClickListener( new SaveButtonPress( this ) );
     }
 
     private void initWidgets() {
