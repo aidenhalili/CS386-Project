@@ -37,9 +37,13 @@ public class Time {
         String parsedMinute = String.valueOf( minute );
         String meridiem = " AM";
 
-        if( hour > 12 ){
+        if( hour >= 12 ){
 
-            parsedHour = String.valueOf( hour - 12 );
+            if( hour > 12 ){
+
+                parsedHour = String.valueOf( hour - 12 );
+            }
+
             meridiem = " PM";
         }
 
