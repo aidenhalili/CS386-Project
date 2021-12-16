@@ -16,7 +16,6 @@ import androidx.core.content.ContextCompat;
 import android.Manifest;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.Spinner;
@@ -53,46 +52,22 @@ public class MainActivity extends AppCompatActivity {
 
         SoundSpinner.fillSoundSpinner( this );
 
+        // set spinner listeners
         Spinner soundSpinner = findViewById( R.id.soundspinner );
         soundSpinner.setOnItemSelectedListener( new SoundSpinner() );
 
         Spinner presetSpinner = findViewById( R.id.presetspinner );
         presetSpinner.setOnItemSelectedListener( new PresetSpinner() );
 
+        // set button listeners
         Button alarmButton = findViewById( R.id.alarmbutton );
+        alarmButton.setOnClickListener( new AlarmButtonPress( this ) );
+
         Button saveButton = findViewById( R.id.savebutton );
+        saveButton.setOnClickListener( new SaveButtonPress( this ) );
 
         Button loginButton = findViewById( R.id.loginbutton );
         loginButton.setOnClickListener( new LoginButtonPress( this ) );
-
-        // called by alarm button
-        alarmButton.setOnClickListener( new View.OnClickListener() {
-
-            @Override
-            public void onClick(View view) {
-
-                if( chosenPresetLabel == null ){
-
-                    AlarmPreset preset =
-                            new AlarmPreset( MainActivity.this, hour, minute, chosenSound );
-
-                    alarmList.addPreset( preset );
-
-                    chosenPresetLabel = preset.getAlarmLabel();
-                }
-
-                Alarm alarm = alarmList.findPreset( chosenPresetLabel ).makeAlarm();
-
-                alarm.setAlarm();
-
-                level++;
-
-                SoundSpinner.fillSoundSpinner( MainActivity.this );
-
-            }
-        });
-
-        saveButton.setOnClickListener( new SaveButtonPress( this ) );
     }
 
     private void initWidgets() {
