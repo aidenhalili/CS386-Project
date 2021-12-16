@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
 
         fillSoundMenu();
 
-        initializeSpinner();
+        com.example.walkitoff.Spinner.initializeSpinner(this);
 
         Button alarmButton = findViewById( R.id.alarmbutton );
         Button saveButton = findViewById( R.id.savebutton );
@@ -195,19 +195,6 @@ public class MainActivity extends AppCompatActivity {
         spinner.setAdapter( adapter );
 
 
-    }
-
-    /**
-     * Note: add a class for every new spinner to inherit from spinner class
-     */
-    private void initializeSpinner(){
-        // declare spinners
-        Spinner soundSpinner = findViewById( R.id.soundspinner );
-        Spinner presetSpinner = findViewById( R.id.presetspinner );
-
-        // set listeners
-        presetSpinner.setOnItemSelectedListener( new PresetSpinner() );
-        soundSpinner.setOnItemSelectedListener( new SoundSpinner() );
     }
 
     private void initializeThemeSwitch(){
