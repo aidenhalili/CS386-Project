@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
     static final int REQUEST_PERMISSION = 1;
 
-    int hour, minute, level = 0;
+    public static int hour, minute, level = 0;
 
     public static AlarmList alarmList = new AlarmList();
 
@@ -44,13 +44,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        initializeThemeSwitch();
+        ActivityCompat.requestPermissions( this,
+                new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_PERMISSION );
 
-        requestLocationPermission();
+        initializeThemeSwitch();
 
         initializeTimePicker();
 
-        fillSoundSpinner();
+        SoundSpinner.fillSoundSpinner( this );
 
         Spinner soundSpinner = findViewById( R.id.soundspinner );
         soundSpinner.setOnItemSelectedListener( new SoundSpinner() );
@@ -86,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
 
                 level++;
 
-                fillSoundSpinner();
+                SoundSpinner.fillSoundSpinner( MainActivity.this );
 
             }
         });
@@ -157,17 +158,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
-    /**
-     * fills the drop down spinner menu with unlocked sounds
-     */
-    private void fillSoundSpinner(){
-
-        String[] soundArray = SoundFacade.getSoundArray( level );
-
-        MainSpinner.fillSpinner( this, soundArray, R.id.soundspinner );
-    }
-
     private void initializeThemeSwitch(){
 
         settings = (Theme) getApplication();
@@ -188,12 +178,6 @@ public class MainActivity extends AppCompatActivity {
                 minute = inMinute;
             }
         });
-    }
-
-    private void requestLocationPermission(){
-
-        ActivityCompat.requestPermissions( this,
-                new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_PERMISSION );
     }
 
 }
