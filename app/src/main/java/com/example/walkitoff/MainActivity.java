@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
 
     int hour, minute, level = 0;
 
-    public AlarmList alarmList = new AlarmList();
+    public static AlarmList alarmList = new AlarmList();
 
     private Theme settings;
     private SwitchMaterial themeSwitch;
@@ -100,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
 
                 alarmList.addPreset( preset );
 
-                fillPresetMenu();
+                PresetSpinner.fillPresetSpinner( MainActivity.this );
             }
         });
     }
@@ -166,23 +166,6 @@ public class MainActivity extends AppCompatActivity {
         String[] soundArray = SoundFacade.getSoundArray( level );
 
         MainSpinner.fillSpinner( this, soundArray, R.id.soundspinner );
-    }
-
-    /**
-     * fills second dropdown menu with alarm presets
-     */
-    private void fillPresetMenu(){
-
-        String[] alarmLabelArray = new String[ alarmList.size ];
-
-        int index;
-
-        for( index = 0; index < alarmList.size; index++ ){
-
-            alarmLabelArray[ index ] = alarmList.alarmArray[ index ].getAlarmLabel();
-        }
-
-        MainSpinner.fillSpinner( this, alarmLabelArray, R.id.presetspinner );
     }
 
     private void initializeThemeSwitch(){
