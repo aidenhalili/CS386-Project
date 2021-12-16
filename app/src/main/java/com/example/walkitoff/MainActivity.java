@@ -166,7 +166,7 @@ public class MainActivity extends AppCompatActivity {
 
         String[] soundArray = SoundFacade.getSoundArray( level );
 
-        fillSpinner( soundArray, R.id.soundspinner );
+        MainSpinner.fillSpinner( this, soundArray, R.id.soundspinner );
     }
 
     /**
@@ -183,20 +183,7 @@ public class MainActivity extends AppCompatActivity {
             alarmLabelArray[ index ] = alarmList.alarmArray[ index ].getAlarmLabel();
         }
 
-        fillSpinner( alarmLabelArray, R.id.presetspinner );
-    }
-
-
-    private void fillSpinner( String[] array, int spinnerId ){
-
-        Spinner spinner = findViewById( spinnerId );
-
-        ArrayAdapter<String> adapter =
-                new ArrayAdapter<String>( this, android.R.layout.simple_list_item_1, array );
-
-        adapter.setDropDownViewResource( android.R.layout.simple_spinner_dropdown_item );
-
-        spinner.setAdapter( adapter );
+        MainSpinner.fillSpinner( this, alarmLabelArray, R.id.presetspinner );
     }
 
     private void initializeThemeSwitch(){
