@@ -6,7 +6,6 @@ package com.example.walkitoff;
 - Constructor
 - Get methods
 - changed multyplyer
--
 * */
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
@@ -47,9 +46,7 @@ public class MainActivity extends AppCompatActivity {
                 new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_PERMISSION );
 
         initializeThemeSwitch();
-
         initializeTimePicker();
-
         SoundSpinner.fillSoundSpinner( this );
 
         // set spinner listeners
