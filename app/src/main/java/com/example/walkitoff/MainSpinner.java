@@ -5,7 +5,7 @@ import android.content.Context;
 import android.view.View;
 import android.widget.AdapterView;
 
-public class Spinner implements AdapterView.OnItemSelectedListener{
+public class MainSpinner implements AdapterView.OnItemSelectedListener{
 
     public String selection = "";
 

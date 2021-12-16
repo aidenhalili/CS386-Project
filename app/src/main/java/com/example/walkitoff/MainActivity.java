@@ -51,9 +51,9 @@ public class MainActivity extends AppCompatActivity {
 
         initializeTimePicker();
 
-        fillSoundMenu();
+        fillSoundSpinner();
 
-        com.example.walkitoff.Spinner.initializeSpinner(this);
+        MainSpinner.initializeSpinner(this);
 
         Button alarmButton = findViewById( R.id.alarmbutton );
         Button saveButton = findViewById( R.id.savebutton );
@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
 
                 level++;
 
-                fillSoundMenu();
+                fillSoundSpinner();
 
             }
         });
@@ -158,7 +158,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * fills the drop down spinner menu with unlocked sounds
      */
-    private void fillSoundMenu(){
+    private void fillSoundSpinner(){
 
         String[] soundArray = SoundFacade.getSoundArray( level );
 

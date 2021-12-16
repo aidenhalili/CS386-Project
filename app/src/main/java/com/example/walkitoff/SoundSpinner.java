@@ -3,7 +3,7 @@ package com.example.walkitoff;
 import android.view.View;
 import android.widget.AdapterView;
 
-public class SoundSpinner extends Spinner{
+public class SoundSpinner extends MainSpinner{
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
