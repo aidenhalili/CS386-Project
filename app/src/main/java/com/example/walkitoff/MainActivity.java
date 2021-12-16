@@ -53,7 +53,11 @@ public class MainActivity extends AppCompatActivity {
 
         fillSoundSpinner();
 
-        MainSpinner.initializeSpinner(this);
+        Spinner soundSpinner = findViewById( R.id.soundspinner );
+        soundSpinner.setOnItemSelectedListener( new SoundSpinner() );
+
+        Spinner presetSpinner = findViewById( R.id.presetspinner );
+        presetSpinner.setOnItemSelectedListener( new PresetSpinner() );
 
         Button alarmButton = findViewById( R.id.alarmbutton );
         Button saveButton = findViewById( R.id.savebutton );
@@ -193,8 +197,6 @@ public class MainActivity extends AppCompatActivity {
         adapter.setDropDownViewResource( android.R.layout.simple_spinner_dropdown_item );
 
         spinner.setAdapter( adapter );
-
-
     }
 
     private void initializeThemeSwitch(){

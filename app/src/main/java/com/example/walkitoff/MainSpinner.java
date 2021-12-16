@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.content.Context;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 
 public class MainSpinner implements AdapterView.OnItemSelectedListener{
 
@@ -20,16 +22,17 @@ public class MainSpinner implements AdapterView.OnItemSelectedListener{
 
     }
 
-    public static void initializeSpinner(Context context) {
+    public static void fillSpinner( Context context, String[] array, int spinnerId ){
 
         Activity activity = (Activity)context;
 
-        // declare spinners
-        android.widget.Spinner soundSpinner = activity.findViewById( R.id.soundspinner );
-        android.widget.Spinner presetSpinner = activity.findViewById( R.id.presetspinner );
+        Spinner spinner = activity.findViewById( spinnerId );
 
-        // set listeners
-        presetSpinner.setOnItemSelectedListener( new PresetSpinner() );
-        soundSpinner.setOnItemSelectedListener( new SoundSpinner() );
+        ArrayAdapter<String> adapter =
+                new ArrayAdapter<String>(context, android.R.layout.simple_list_item_1, array);
+
+        adapter.setDropDownViewResource( android.R.layout.simple_spinner_dropdown_item );
+
+        spinner.setAdapter( adapter );
     }
     }
