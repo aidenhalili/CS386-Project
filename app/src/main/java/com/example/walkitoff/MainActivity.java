@@ -10,7 +10,6 @@ package com.example.walkitoff;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
 
 import android.Manifest;
 import android.content.SharedPreferences;
@@ -46,8 +45,11 @@ public class MainActivity extends AppCompatActivity {
                 new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_PERMISSION );
 
         initializeThemeSwitch();
-        initializeTimePicker();
         SoundSpinner.fillSoundSpinner( this );
+
+        // set time picker listener
+        TimePicker timePicker = findViewById(R.id.timepicker);
+        timePicker.setOnTimeChangedListener( new TimePickerListener() );
 
         // set spinner listeners
         Spinner soundSpinner = findViewById( R.id.soundspinner );
@@ -65,12 +67,6 @@ public class MainActivity extends AppCompatActivity {
 
         Button loginButton = findViewById( R.id.loginbutton );
         loginButton.setOnClickListener( new LoginButtonPress( this ) );
-    }
-
-    private void initWidgets() {
-        themeSwitch = findViewById(R.id.themeSwitch);
-        themeTV = findViewById(R.id.themeTV);
-
     }
 
 
@@ -102,8 +98,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void updateView() {
-        final int black = ContextCompat.getColor(this, R.color.black );
-        final int white = ContextCompat.getColor(this, R.color.white );
 
         if(settings.getCustomTheme().equals(Theme.DARK_THEME))
         {
@@ -122,23 +116,10 @@ public class MainActivity extends AppCompatActivity {
     private void initializeThemeSwitch(){
 
         settings = (Theme) getApplication();
-        initWidgets();
+        themeSwitch = findViewById(R.id.themeSwitch);
+        themeTV = findViewById(R.id.themeTV);
+
         loadSharedPreferences();
         initSwitchListener();
     }
-
-    private void initializeTimePicker(){
-
-        TimePicker timePicker = findViewById( R.id.timepicker );
-
-        timePicker.setOnTimeChangedListener(new TimePicker.OnTimeChangedListener() {
-            @Override
-            public void onTimeChanged(TimePicker timePicker, int inHour, int inMinute) {
-
-                hour = inHour;
-                minute = inMinute;
-            }
-        });
-    }
-
 }
