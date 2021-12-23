@@ -7,23 +7,21 @@ public class Time {
      *
      * @return - parsed time (ex. 23:12 -> "2312") (String)
      */
-    public static String parseTime( int hour, int minute ){
+    public static int parseTime( int hour, int minute ){
 
         // variables
         String parsedHour = String.valueOf( hour );
         String parsedMinute = String.valueOf( minute );
-
-        if( hour < 10 ){
-
-            parsedHour = "0" + parsedHour;
-        }
+        String parsedTime;
 
         if( minute < 10 ){
 
             parsedMinute = "0" + parsedMinute;
         }
 
-        return parsedHour + parsedMinute;
+        parsedTime = parsedHour + parsedMinute;
+
+        return Integer.parseInt( parsedTime );
     }
 
     /**
