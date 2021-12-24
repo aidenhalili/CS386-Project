@@ -8,14 +8,11 @@ package com.example.walkitoff;
 - changed multyplyer
 * */
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.app.ActivityCompat;
 
 import android.Manifest;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Button;
-import android.widget.CompoundButton;
 import android.widget.Spinner;
 import android.widget.TimePicker;
 
@@ -36,7 +33,9 @@ public class MainActivity extends AppCompatActivity {
         ActivityCompat.requestPermissions( this,
                 new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_PERMISSION );
 
-        initializeThemeSwitch();
+        Theme.initializeThemeSwitch( this );
+        Theme.initializeSwitchListener( this );
+
         SoundSpinner.fillSoundSpinner( this );
 
         // set time picker listener
@@ -60,58 +59,4 @@ public class MainActivity extends AppCompatActivity {
         Button loginButton = findViewById( R.id.loginbutton );
         loginButton.setOnClickListener( new LoginButtonPress( this ) );
     }
-
-
-    private void loadSharedPreferences() {
-
-        SharedPreferences sharedPreferences = getSharedPreferences(Theme.PREFERENCES, MODE_PRIVATE);
-        String theme = sharedPreferences.getString(Theme.CUSTOM_THEME, Theme.LIGHT_THEME);
-        Theme.customTheme = theme;
-        updateView();
     }
-
-    private void initSwitchListener() {
-        Theme.themeSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean checked) {
-                if(checked)
-                    Theme.customTheme = Theme.DARK_THEME;
-                else
-                    Theme.customTheme = Theme.LIGHT_THEME;
-
-                SharedPreferences.Editor editor = getSharedPreferences(Theme.PREFERENCES, MODE_PRIVATE).edit();
-                editor.putString(Theme.CUSTOM_THEME, Theme.settings.getCustomTheme());
-                editor.apply();
-                updateView();
-
-
-            }
-        });
-    }
-
-    private void updateView() {
-
-        if(Theme.settings.getCustomTheme().equals(Theme.DARK_THEME))
-        {
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-            Theme.themeTextView.setText("Dark Theme");
-            Theme.themeSwitch.setChecked(true);
-        }
-        else
-        {
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-            Theme.themeSwitch.setChecked(false);
-        }
-
-    }
-
-    private void initializeThemeSwitch(){
-
-        Theme.settings = (Theme) getApplication();
-        Theme.themeSwitch = findViewById(R.id.themeSwitch);
-        Theme.themeTextView = findViewById(R.id.themeTV);
-
-        loadSharedPreferences();
-        initSwitchListener();
-    }
-}
