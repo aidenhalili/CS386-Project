@@ -4,7 +4,8 @@ import android.content.Context;
 
 public class AlarmPreset {
 
-    private String alarmLabel, time, sound;
+    private String alarmLabel, sound;
+    private int time;
 
     private Context context;
 
@@ -28,15 +29,15 @@ public class AlarmPreset {
 
     }
 
+    /**
+     *
+     * @return string for alarm preset spinner
+     */
     public String getAlarmLabel(){
 
         return alarmLabel;
     }
-    /**
-     * creates an alarm object based off of member data
-     *
-     * @return alarm
-     */
+
     public Alarm makeAlarm(){
 
         return new Alarm( context, time, sound );

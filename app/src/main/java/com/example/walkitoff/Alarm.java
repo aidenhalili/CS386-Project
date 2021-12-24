@@ -1,24 +1,23 @@
 package com.example.walkitoff;
 
 import android.content.Context;
-import android.location.LocationManager;
 import android.media.MediaPlayer;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Alarm {
 
-    private String wakeUpTime, alarmSound;
+    private String alarmSound;
+    private int wakeUpTime;
 
-    Context mainContext;
+    Context context;
 
-    public Alarm( Context context, String inTime, String inSound ){
+    public Alarm( Context context, int time, String sound ){
 
         // set member data to parameters
-        wakeUpTime = inTime;
-        alarmSound = inSound;
-
-        mainContext = context;
+        wakeUpTime = time;
+        alarmSound = sound;
+        this.context = context;
     }
 
     /**
@@ -26,14 +25,13 @@ public class Alarm {
      */
     private void playAlarm(){
 
-        MediaPlayer sound = MediaPlayer.create( mainContext, SoundFacade.getSound( alarmSound ) );
-        // play alarm sound
-        sound.start();
+        MediaPlayer sound = MediaPlayer.create( context, SoundFacade.getSound( alarmSound ) );
 
-        // set sound loop
+        // start alarm sound
+        sound.start();
         sound.setLooping( true );
 
-        // initiate alarm stop
+        // initialize alarm stop
         stopAlarm( sound );
     }
 
@@ -46,22 +44,17 @@ public class Alarm {
         Date time = new Date();
         SimpleDateFormat formatTime = new SimpleDateFormat( "HHmm" );
 
-        // get the current time
-        String currentTime = formatTime.format( time );
+        // get the current time as a integer
+        int currentTime = Integer.parseInt( formatTime.format( time ) );
 
         // loop until current time equals wake-up time
-        while( !currentTime.equals( wakeUpTime ) ){
+        while( currentTime != wakeUpTime ){
 
-            // reinitialize date object
             time = new Date();
 
-            // get the current date
-            currentTime = formatTime.format( time );
+            currentTime = Integer.parseInt( formatTime.format( time ) );
         }
-        // end loop
 
-        // play alarm sound
-          // method: playAlarm
         playAlarm();
     }
 
@@ -70,13 +63,13 @@ public class Alarm {
      */
     public void stopAlarm( MediaPlayer sound ){
 
+        int defaultDistance = 30;
+
         // start tracking distance at test distance of 30 feet
-        new Distance( mainContext, 30 ).trackDistance();
+        new Distance( context, defaultDistance ).trackDistance();
 
-        // stop sound loop
+        // stop alarm sound
         sound.setLooping( false );
-
-        // release alarm sound
         sound.release();
     }
 
