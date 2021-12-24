@@ -17,24 +17,16 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.TimePicker;
-
-import com.google.android.material.switchmaterial.SwitchMaterial;
 
 public class MainActivity extends AppCompatActivity {
 
     public static String uID,uName,uDistance,uScore,uLevel, chosenSound, chosenPresetLabel;
 
     static final int REQUEST_PERMISSION = 1;
-
     public static int hour, minute, level = 0;
 
     public static AlarmList alarmList = new AlarmList();
-
-    private Theme settings;
-    private SwitchMaterial themeSwitch;
-    private TextView themeTV;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,21 +66,21 @@ public class MainActivity extends AppCompatActivity {
 
         SharedPreferences sharedPreferences = getSharedPreferences(Theme.PREFERENCES, MODE_PRIVATE);
         String theme = sharedPreferences.getString(Theme.CUSTOM_THEME, Theme.LIGHT_THEME);
-        settings.setCustomTheme(theme);
+        Theme.customTheme = theme;
         updateView();
     }
 
     private void initSwitchListener() {
-        themeSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        Theme.themeSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean checked) {
                 if(checked)
-                    settings.setCustomTheme(Theme.DARK_THEME);
+                    Theme.customTheme = Theme.DARK_THEME;
                 else
-                    settings.setCustomTheme(Theme.LIGHT_THEME);
+                    Theme.customTheme = Theme.LIGHT_THEME;
 
                 SharedPreferences.Editor editor = getSharedPreferences(Theme.PREFERENCES, MODE_PRIVATE).edit();
-                editor.putString(Theme.CUSTOM_THEME, settings.getCustomTheme());
+                editor.putString(Theme.CUSTOM_THEME, Theme.settings.getCustomTheme());
                 editor.apply();
                 updateView();
 
@@ -99,25 +91,25 @@ public class MainActivity extends AppCompatActivity {
 
     private void updateView() {
 
-        if(settings.getCustomTheme().equals(Theme.DARK_THEME))
+        if(Theme.settings.getCustomTheme().equals(Theme.DARK_THEME))
         {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-            themeTV.setText("Dark Theme");
-            themeSwitch.setChecked(true);
+            Theme.themeTextView.setText("Dark Theme");
+            Theme.themeSwitch.setChecked(true);
         }
         else
         {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-            themeSwitch.setChecked(false);
+            Theme.themeSwitch.setChecked(false);
         }
 
     }
 
     private void initializeThemeSwitch(){
 
-        settings = (Theme) getApplication();
-        themeSwitch = findViewById(R.id.themeSwitch);
-        themeTV = findViewById(R.id.themeTV);
+        Theme.settings = (Theme) getApplication();
+        Theme.themeSwitch = findViewById(R.id.themeSwitch);
+        Theme.themeTextView = findViewById(R.id.themeTV);
 
         loadSharedPreferences();
         initSwitchListener();

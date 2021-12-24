@@ -1,6 +1,9 @@
 package com.example.walkitoff;
 
 import android.app.Application;
+import android.widget.TextView;
+
+import com.google.android.material.switchmaterial.SwitchMaterial;
 
 public class Theme extends Application {
 
@@ -9,13 +12,13 @@ public class Theme extends Application {
     public static final String LIGHT_THEME = "lightTheme";
     public static final String PREFERENCES = "preferences";
 
-    private String customTheme;
+    public static String customTheme;
+    public static Theme settings;
+    public static SwitchMaterial themeSwitch;
+    public static TextView themeTextView;
+
 
     public String getCustomTheme() {
         return customTheme;
-    }
-
-    public void setCustomTheme(String customTheme) {
-        this.customTheme = customTheme;
     }
 }
