@@ -5,7 +5,7 @@ import android.view.View;
 
 public class AlarmButtonPress extends ButtonPress{
 
-    private Context context;
+    private final Context context;
 
     public AlarmButtonPress( Context context ){
 
