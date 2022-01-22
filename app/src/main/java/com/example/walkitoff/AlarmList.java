@@ -6,9 +6,6 @@ public class AlarmList {
 
     public static int size;
 
-    /**
-     * constructor
-     */
     public AlarmList(){
 
         size = 1;
