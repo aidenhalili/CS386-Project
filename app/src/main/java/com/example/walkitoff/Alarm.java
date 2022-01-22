@@ -1,23 +1,24 @@
 package com.example.walkitoff;
 
 import android.content.Context;
+import android.content.Intent;
 import android.media.MediaPlayer;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Alarm {
 
-    private String alarmSound;
+    private MediaPlayer alarmSound;
     private int wakeUpTime;
 
-    Context context;
+    private static Context context;
 
     public Alarm( Context context, int time, String sound ){
 
         // set member data to parameters
         wakeUpTime = time;
-        alarmSound = sound;
         this.context = context;
+        alarmSound = MediaPlayer.create(context, SoundFacade.getSound( sound ) );
     }
 
     /**
@@ -25,14 +26,11 @@ public class Alarm {
      */
     private void playAlarm(){
 
-        MediaPlayer sound = MediaPlayer.create( context, SoundFacade.getSound( alarmSound ) );
-
         // start alarm sound
-        sound.start();
-        sound.setLooping( true );
+        alarmSound.start();
+        alarmSound.setLooping( true );
 
-        // initialize alarm stop
-        stopAlarm( sound );
+        context.stopService( new Intent( context, BackgroundService.class ) );
     }
 
     /**
@@ -61,7 +59,7 @@ public class Alarm {
     /**
      * stops the alarm sound
      */
-    public void stopAlarm( MediaPlayer sound ){
+    public void stopAlarm(){
 
         int defaultDistance = 30;
 
@@ -69,8 +67,8 @@ public class Alarm {
         new Distance( context, defaultDistance ).trackDistance();
 
         // stop alarm sound
-        sound.setLooping( false );
-        sound.release();
+        alarmSound.setLooping( false );
+        alarmSound.release();
     }
 
 }

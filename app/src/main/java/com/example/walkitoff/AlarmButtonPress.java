@@ -1,6 +1,7 @@
 package com.example.walkitoff;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.View;
 
 public class AlarmButtonPress extends ButtonPress{
@@ -25,10 +26,7 @@ public class AlarmButtonPress extends ButtonPress{
             MainActivity.chosenPresetLabel = preset.getAlarmLabel();
         }
 
-        Alarm alarm =
-                MainActivity.alarmList.findPreset( MainActivity.chosenPresetLabel ).makeAlarm();
-
-        alarm.setAlarm();
+        context.startService( new Intent( context, BackgroundService.class ) );
 
         MainActivity.level++;
 
