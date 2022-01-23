@@ -21,6 +21,7 @@ public class AlarmButtonPress extends ButtonPress{
                     context, MainActivity.hour, MainActivity.minute, MainActivity.chosenSound );
 
             MainActivity.alarmList.addPreset( preset );
+            PresetSpinner.fillPresetSpinner(context);
 
             MainActivity.chosenPresetLabel = preset.getAlarmLabel();
         }
