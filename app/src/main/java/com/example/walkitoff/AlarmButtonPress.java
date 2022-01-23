@@ -3,9 +3,6 @@ package com.example.walkitoff;
 import android.content.Context;
 import android.view.View;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 public class AlarmButtonPress extends ButtonPress{
 
     private Context context;
@@ -20,16 +17,11 @@ public class AlarmButtonPress extends ButtonPress{
 
         if( MainActivity.chosenPresetLabel == null ){
 
-            Date time = new Date();
-
-            MainActivity.hour = Integer.parseInt(new SimpleDateFormat("HH").format(time));
-
-            MainActivity.minute = Integer.parseInt(new SimpleDateFormat("mm").format(time));
-
             AlarmPreset preset = new AlarmPreset(
                     context, MainActivity.hour, MainActivity.minute, MainActivity.chosenSound );
 
             MainActivity.alarmList.addPreset( preset );
+            PresetSpinner.fillPresetSpinner(context);
 
             MainActivity.chosenPresetLabel = preset.getAlarmLabel();
         }

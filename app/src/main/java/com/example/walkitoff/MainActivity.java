@@ -16,12 +16,18 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TimePicker;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class MainActivity extends AppCompatActivity {
 
     public static String uID,uName,uDistance,uScore,uLevel, chosenSound, chosenPresetLabel;
 
     static final int REQUEST_PERMISSION = 1;
-    public static int hour, minute, level = 0;
+    public static int level = 0;
+    public static int hour = Integer.parseInt(new SimpleDateFormat("HH").format(new Date()));
+    public static int minute =
+            Integer.parseInt(new SimpleDateFormat("mm").format(new Date()));
 
     public static AlarmList alarmList = new AlarmList();
 
