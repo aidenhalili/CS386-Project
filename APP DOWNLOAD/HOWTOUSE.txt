@@ -1,0 +1,10 @@
+How to use:
+- Download the apk to your phone to get started
+- Select a time and a sound
+- The app must be open in order for it to run
+- Ignore the log in button, it's for developer use.
+- Once the set alarm button is clicked, you can't do anything else in the app
+ until it goes off
+- when the alarm goes off, you must walk thirty feet or more depending on your phone's
+location accuracy in order to shut off the alarm.
+- Right now, you can also shut off the alarm or reset everything by just closing the app. 
